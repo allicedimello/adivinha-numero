@@ -21,8 +21,5 @@ while (numeroChute != numeroSecreto) {
     }
 }
 
-if (numeroTentativas == 1) {
-    alert(`Parabéns, você adivinhou o número secreto com ${numeroTentativas} tentativa!`);
-} else {
-    alert(`Parabéns, você adivinhou o número secreto com ${numeroTentativas} tentativas!`);
-}
+let palavraTentativa = numeroTentativas > 1 ? "tentativas" : "tentativa"
+alert(`Parabéns, você adivinhou o número secreto com ${numeroTentativas} ${palavraTentativa}!`);
