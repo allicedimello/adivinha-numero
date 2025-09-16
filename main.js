@@ -9,7 +9,7 @@ while (numeroChute != numeroSecreto) {
     numeroChute = prompt(`Escolha um número entre 1 e ${numeroMaximo}`);
 
     if (numeroChute == numeroSecreto) {
-        alert(`Parabéns, você adivinhou o número secreto com ${numeroTentativas} tentativas!`);
+        break
     } else {
         if (numeroChute > numeroSecreto) {
             alert(`O número secreto é menor que ${numeroChute}!`);
@@ -19,4 +19,10 @@ while (numeroChute != numeroSecreto) {
 
         numeroTentativas++
     }
+}
+
+if (numeroTentativas == 1) {
+    alert(`Parabéns, você adivinhou o número secreto com ${numeroTentativas} tentativa!`);
+} else {
+    alert(`Parabéns, você adivinhou o número secreto com ${numeroTentativas} tentativas!`);
 }
