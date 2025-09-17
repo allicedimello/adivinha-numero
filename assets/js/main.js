@@ -1,4 +1,4 @@
-alert("Bem vindo(a) ao jogo do número secreto!");
+/* alert("Bem vindo(a) ao jogo do número secreto!");
 
 let numeroMaximo = 100
 let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
@@ -22,4 +22,4 @@ while (numeroChute != numeroSecreto) {
 }
 
 let palavraTentativa = numeroTentativas > 1 ? "tentativas" : "tentativa"
-alert(`Parabéns, você adivinhou o número secreto com ${numeroTentativas} ${palavraTentativa}!`);
+alert(`Parabéns, você adivinhou o número secreto com ${numeroTentativas} ${palavraTentativa}!`); */
