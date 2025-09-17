@@ -1,3 +1,4 @@
+/*
 alert("Bem vindo(a) ao jogo do número secreto!");
 
 let numeroMaximo = 100
@@ -23,3 +24,24 @@ while (numeroChute != numeroSecreto) {
 
 let palavraTentativa = numeroTentativas > 1 ? "tentativas" : "tentativa"
 alert(`Parabéns, você adivinhou o número secreto com ${numeroTentativas} ${palavraTentativa}!`);
+*/
+
+let numeroSecreto = gerarNumero();
+
+function exibitTexto(tag, texto){
+    let campo = document.querySelector(tag);
+    campo.innerHTML = texto;
+}
+
+exibitTexto("h1", "Adivinhe o número");
+exibitTexto("p", "Digite um número entre 1 e 100:");
+
+function verificarChute(){
+    console.log("o botão foi clicado"); // >>>>>>>>>> retirar do código
+}
+
+function gerarNumero(){
+    return parseInt(Math.random() * 100 +1);
+}
+
+console.log(numeroSecreto); // >>>>>>>>>> retirar do código

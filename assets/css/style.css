@@ -68,19 +68,15 @@ body {
     width: 100%;
     padding: 10px;
     border: 1px solid #666666;
+    color: #8a0303;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
     border-radius: 5px;
     font-size: 15px;
     margin-top: 0.1em;
     margin-bottom: 15px;
     text-align: left;
-}
-
-.container__texto {
-    margin: 16px 0 16px 0;
-}
-
-.container__texto-cor {
-    color: #8a0303;
 }
 
 .container__botoes {
@@ -98,12 +94,12 @@ h1 {
 
 p,
 button {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .texto__paragrafo {
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 700;
     text-align: left;
 }
 
