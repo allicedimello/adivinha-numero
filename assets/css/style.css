@@ -22,7 +22,7 @@ body {
     background-color: rgba(240, 248, 255, 0.9);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #acacac;
+    box-shadow: 5px 5px 10px #8a0303;
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -54,13 +54,14 @@ input {
 }
 
 button {
-    padding: 10px;
+    padding: 16px;
     width: 100px;
-    border-radius: 10%;
+    border-radius: 16px;
     border: none;
     background-color: #080808;
     color: #faebd7;
     font-size: 13px;
+    font-weight: 700;
     cursor: pointer;
 }
 
