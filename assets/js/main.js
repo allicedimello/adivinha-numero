@@ -1,43 +1,60 @@
-/*
-alert("Bem vindo(a) ao jogo do número secreto!");
-
-let numeroMaximo = 100
-let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
-let numeroChute;
-let numeroTentativas = 1;
-
-while (numeroChute != numeroSecreto) {
-    numeroChute = prompt(`Escolha um número entre 1 e ${numeroMaximo}`);
-
-    if (numeroChute == numeroSecreto) {
-        break
-    } else {
-        if (numeroChute > numeroSecreto) {
-            alert(`O número secreto é menor que ${numeroChute}!`);
-        } else if (numeroChute < numeroSecreto) {
-            alert(`O número secreto é maior que ${numeroChute}!`);
-        }
-
-        numeroTentativas++
-    }
-}
-
-let palavraTentativa = numeroTentativas > 1 ? "tentativas" : "tentativa"
-alert(`Parabéns, você adivinhou o número secreto com ${numeroTentativas} ${palavraTentativa}!`);
-*/
-
 let numeroSecreto = gerarNumero();
+let numeroPalpite;
+let numeroMaximo = 100
+let numeroTentativas = 1;
+let mensagemNumero = `Digite um número entre 1 e ${numeroMaximo}:`
+
+exibitTexto("h1", "Adivinhe o número");
+exibitTexto("p", mensagemNumero);
 
 function exibitTexto(tag, texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
 }
 
-exibitTexto("h1", "Adivinhe o número");
-exibitTexto("p", "Digite um número entre 1 e 100:");
+function validarPalpite() {
+    if (numeroPalpite === "" || isNaN(numeroPalpite)) {
+        exibitTexto("p", "Digite um número válido!");
+        document.querySelector("input").value = "";
+        return false;
+    }
+    if (numeroPalpite < 1 || numeroPalpite > 100) {
+        exibitTexto("p", mensagemNumero);
+        document.querySelector("input").value = "";
+        return false;
+    }
+    return true;
+}
 
 function verificarChute(){
-    console.log("o botão foi clicado"); // >>>>>>>>>> retirar do código
+    numeroPalpite = document.querySelector("input").value;
+
+     if (!validarPalpite(numeroPalpite)) {
+        document.querySelector("input").value = "";
+        return;
+    }
+
+    if (numeroPalpite == numeroSecreto){
+        exibitTexto("h1", "Acertou!");
+        let palavraTentativa = numeroTentativas > 1 ? "tentativas" : "tentativa"
+        let mensagemTentativas = `Você descobriu o número secreto com ${numeroTentativas} ${palavraTentativa}`
+        exibitTexto("p", mensagemTentativas);
+
+        document.querySelector("input").disabled = true;
+        document.querySelector("button").disabled = true;
+    } else {
+        let palavra = numeroPalpite > numeroSecreto ? "menor" : "maior"
+        let mensagemPalpite = `O número secreto é ${palavra} que ${numeroPalpite}`
+        if (numeroPalpite > numeroSecreto){
+            exibitTexto("p", mensagemPalpite);
+        } else if (numeroPalpite < numeroSecreto) {
+            exibitTexto("p", mensagemPalpite);
+        }
+
+        numeroTentativas++
+    }
+    
+    document.querySelector("input").value = "";
 }
 
 function gerarNumero(){
