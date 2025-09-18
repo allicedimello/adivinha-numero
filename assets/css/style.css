@@ -105,3 +105,34 @@ button {
 button:hover {
     background-color: #666666;
 }
+
+button:disabled {
+    background-color: #acacac
+}
+
+@media screen and (max-width: 1250px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .container__botao {
+        font-size: 10px;
+    }
+
+    .texto__paragrafo {
+        font-size: 15px;
+    }
+
+    .container__conteudo {
+        display: block;
+        position: inherit;
+    }
+
+    .container__informacoes {
+        padding: 1rem
+    }
+
+    .container__input {
+        font-size: 15px;
+    }
+}
