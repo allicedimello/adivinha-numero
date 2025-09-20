@@ -53,7 +53,7 @@ body {
 
 .container__informacoes {
     flex: 1;
-    padding: 3rem
+    padding: 3rem;
 }
 
 .container__botao {
@@ -113,7 +113,7 @@ button:hover {
 }
 
 button:disabled {
-    background-color: #acacac
+    background-color: #acacac;
 }
 
 @media screen and (max-width:340px){
@@ -142,7 +142,7 @@ button:disabled {
     }
 
     .container__informacoes {
-        padding: 1rem
+        padding: 1rem;
     }
 
     .container__input {
@@ -179,7 +179,7 @@ button:disabled {
     }
 
     .container__informacoes {
-        padding: 1rem
+        padding: 1rem;
     }
 
     .container__input {
@@ -216,7 +216,7 @@ button:disabled {
     }
 
     .container__informacoes {
-        padding: 1rem
+        padding: 1rem;
     }
 
     .container__input {
@@ -253,7 +253,7 @@ button:disabled {
     }
 
     .container__informacoes {
-        padding: 1rem
+        padding: 1rem;
     }
 
     .container__input {
