@@ -21,11 +21,14 @@ function exibirTexto(tag, texto){
     substituirCampo.innerHTML = texto;
 }
 
-function gerarNumero(){
+function iniciarLista(){
     if (!Array.isArray(numerosSorteados)) {
         numerosSorteados = [];
     }
+}
 
+function gerarNumero(){
+    iniciarLista();
     numeroMaximo = 100;
     numeroEscolhido = parseInt(Math.random() * numeroMaximo + 1);
     quantidadeElementos = numerosSorteados.length;
