@@ -22,7 +22,7 @@ function exibirTexto(tag, texto){
 }
 
 function iniciarLista(){
-    if (!Array.isArray(numerosSorteados)) {
+    if (!Array.isArray(numerosSorteados)){
         numerosSorteados = [];
     }
 }
@@ -42,7 +42,6 @@ function gerarNumero(){
 
     } else {
         numerosSorteados.push(numeroEscolhido);
-        console.log(numerosSorteados); // >>>>>>>>>> retirar do código
         return numeroEscolhido;
     }
 }
@@ -59,14 +58,14 @@ function mensagemInicial(){
     exibirTexto('p', mensagemInicio);
 }
 
-function validarPalpite() {
-    if (numeroPalpite === '' || isNaN(numeroPalpite)) {
+function validarPalpite(){
+    if (numeroPalpite === '' || isNaN(numeroPalpite)){
         exibirTexto('p', 'Digite um número válido!');
         limparCampo();
         return false;
     }
 
-    if (numeroPalpite < 1 || numeroPalpite > numeroMaximo) {
+    if (numeroPalpite < 1 || numeroPalpite > numeroMaximo){
         mensagemInvalido = `${numeroPalpite} não é um número válido, digite um número entre 1 e ${numeroMaximo}!`;
         exibirTexto('p', mensagemInvalido);
         limparCampo();
@@ -78,7 +77,7 @@ function validarPalpite() {
 function verificarChute(){
     numeroPalpite = document.querySelector('input').value;
 
-    if (validarPalpite()) {
+    if (validarPalpite()){
         numeroPalpite = Number(numeroPalpite);
 
         if (numeroPalpite === numeroSecreto){
@@ -113,8 +112,4 @@ function reiniciarJogo(){
     limparCampo();
     document.getElementById('reiniciar').setAttribute('disabled', true);
     document.querySelector('input').disabled = false;
-
-    console.log(numeroSecreto); // >>>>>>>>>> retirar do código
 }
-
-console.log(numeroSecreto); // >>>>>>>>>> retirar do código
