@@ -1,4 +1,7 @@
 let substituirCampo;
+let numerosSorteados;
+let numeroEscolhido;
+let quantidadeElementos;
 let numeroSecreto;
 let numeroPalpite;
 let numeroMaximo;
@@ -19,8 +22,26 @@ function exibirTexto(tag, texto){
 }
 
 function gerarNumero(){
+    if (!Array.isArray(numerosSorteados)) {
+        numerosSorteados = [];
+    }
+
     numeroMaximo = 100;
-    return parseInt(Math.random() * numeroMaximo + 1);
+    numeroEscolhido = parseInt(Math.random() * numeroMaximo + 1);
+    quantidadeElementos = numerosSorteados.length;
+
+    if (quantidadeElementos === numeroMaximo){
+        numerosSorteados = [];
+    }
+
+    if (numerosSorteados.includes(numeroEscolhido)){
+        return gerarNumero();
+
+    } else {
+        numerosSorteados.push(numeroEscolhido);
+        console.log(numerosSorteados); // >>>>>>>>>> retirar do código
+        return numeroEscolhido;
+    }
 }
 
 function iniciarJogo(){
